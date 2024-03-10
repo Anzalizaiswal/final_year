@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Login Page</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style >
+ body{
+            background-color: rgba( 162, 32, 37,0.25);
+            font-family: 'Poppins', sans-serif;
+
+        }
+        .login{
+
+
+            text-align: center;
+            font-weight: bold;
+            font-size: 42px;
+            color: #A22025;
+        }
+        .loginpage{
+            background-color: rgba(210, 226, 235,0.7);
+            border: 1px solid gray;
+            border-radius: 1.4rem;
+            width: 30rem;
+            margin: auto;
+            padding: 5rem 0;
+
+        }
+        .form{
+
+            margin-top: 4rem;
+            text-align: center;
+
+        }
+        .form label{
+            text-align: left;
+        }
+        .form input{
+            height: 2rem;
+            width: 60%;
+            border: 1px solid gray;
+            border-radius: 0.8rem;
+            padding: 5px 10px 0 15px;
+        }
+        .forgot{
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+        .loginbutton{
+            width: 40%;
+            padding: 5px 5px 5px 5px;
+            margin: auto;
+
+        }
+
+    </style>
+</head>
+<body>
+     <div class="loginpage">
+    <div class="login">LogIn</div>
+    <div class="form">
+    <form method="post">
+        {% csrf_token %}
+
+        <input type="text" placeholder="Enter Email" id="username" name="email"><br><br>
+        <input type="password" placeholder="Password" id="password" name="pass">
+        <br><br>
+        <div class="forgot">Forgot Password?</div>
+
+        <input class="loginbutton" type="submit" value="LogIn"><br>
+        <a href="{% url 'signup' %}" >Create a account</a>
+
+    </form>
+    </div>
+    </div>
+    </div>
+
+</body>
+</html>

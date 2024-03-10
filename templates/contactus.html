@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block starts %}
+    <style>
+        body{
+            font-family:'Poppins' , sans-serif;
+            background-image: url('/media/Homepagepictures/contact.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+       .contact{
+        text-align: center;
+        font-weight: bold;
+        font-size: 48px;
+        padding-top: 0rem;
+       }
+       .form{
+            
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            margin-bottom:3rem;
+            
+        }
+        .form label{
+            text-align: left;
+            
+        }
+        .form input{
+            height: 2rem;
+            width: 100%;
+            border: 1px solid gray;
+            border-radius: 0.8rem;
+            text-align: left;
+        }
+        .form1{
+            width: 40%;
+
+        }
+        .form textarea{
+            border-radius: 0.8rem;
+            width:100%;
+            border: 1px solid gray;
+        
+    }
+    .form button{
+        margin: auto;
+        display: inline;
+        border-radius: 0.8rem;
+            border: 1px solid gray;
+            padding: 0.5rem 1rem;
+
+    }
+    
+        
+    </style>
+</head>
+<body>
+    <div class="contact">CONTACT US</div>
+   <div class="form ">
+    <form class="form1 " method="post">
+                {% csrf_token %}
+
+       <!-- <label for="name" >Name</label><br>
+        <input type="text" id="name" name="name"><br>-->
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="message" >Message</label><br>
+        <textarea id="message" name="message" rows="10" cols="45"></textarea>
+       <button type="submit" >Submit</button>
+    </form>
+    
+</div>
+{% endblock %}

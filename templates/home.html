@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block starts %}
+<style>
+    .shadow:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="container">
+<form class="form-inline my-2 d-flex w-5">
+    <input class="form-control mr-sm-2" name="search" placeholder="Search" aria-label="Search">
+    <button class="m-2 my-sm-0 px-2" style="background-color:#F6E9E9;border:none;border-radius:0.5rem; " type="submit">Search</button>
+</form>
+
+<div class="" style="font-size:2rem;" >Results for "{{terms}}"</div>
+<!--<div class="container d-inline ">
+    {% for destination in destinations %}
+        <div class="card">
+            <img class="card-img-top" src="{{ destination.image }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ destination.name }}</h5>
+                <div class="description">
+{{ destination.description|truncatewords:25|linebreaks|safe }}
+  </div>
+                <p class="card-text">{{ destination.description }}</p>
+                <p>Count of Ratings: {{ destination.count_ratings }}</p>
+                <p>Average Rating: {{ destination.average_rating }}</p>
+<div class="rating-stars">
+    {% for i in "12345" %}
+        {% with i_int=i|add:0 %}
+            {% with half_star_limit=i_int|add:-0.5 %}
+                {% if i_int <= destination.average_rating %}
+                    <i class="bi bi-star-fill"></i>
+
+                {% elif half_star_limit <= destination.average_rating %}
+                    <i class="bi bi-star-half"></i>
+                {% else %}
+                    <i class="bi bi-star"></i>
+                {% endif %}
+            {% endwith %}
+        {% endwith %}
+    {% endfor %}
+</div>
+
+
+
+
+                <div class="d-flex justify-content-between">
+                    {% if user.is_superuser %}
+                        <a href="/update-destination/{{ destination.id }}" class="btn btn-primary">Edit</a>
+                        <a href="/delete-destination/{{ destination.id }}" class="btn btn-danger">Delete</a>
+                    {% elif user.is_authenticated %}
+                        {% if not already_rated %}
+                            <a href="{% url 'rate_destination' destination.id %}" class="btn btn-primary">Rate</a>
+                        {% else %}
+                            <button class="btn btn-primary" disabled>Already Rated</button>
+
+                        {% endif %}
+                    {% else %}
+                        <a href="/login" class="btn btn-primary">Rate</a>
+                    {% endif %}
+                            <a href="{% url 'get_details' destination.id %}" class="btn btn-primary">More</a>
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</div>-->
+<div class="container">
+        {% for destination in destinations %}
+<div class="d-flex flex-row my-3 shadow" style="background-color:#F6E9E9; border-radius:2rem;" onclick="window.location.href='{% url 'get_details' destination.id %}'">
+        <img src={{destination.image}} class="col-4" style="height:15rem; padding:0; border-radius:2rem;">
+        <div class="col-8 m-3" style="align-items: center; justify-content:center;">
+            <h5 class="card-title">{{ destination.name }}</h5>
+            <div class="description" >
+                {{ destination.description|truncatewords:25 }}
+                <a href="{% url 'get_details' destination.id %}" class="text-black">more</a>
+
+            </div>
+            <div class="rating-stars">
+    {% for i in "12345" %}
+        {% with i_int=i|add:0 %}
+            {% with half_star_limit=i_int|add:-0.5 %}
+                {% if i_int <= destination.average_rating %}
+                    <i class="bi bi-star-fill"></i>
+
+                {% elif half_star_limit <= destination.average_rating %}
+                    <i class="bi bi-star-half"></i>
+                {% else %}
+                    <i class="bi bi-star"></i>
+                {% endif %}
+            {% endwith %}
+        {% endwith %}
+    {% endfor %}({{ destination.count_ratings }})
+        </div>
+        </div>
+
+
+    </div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

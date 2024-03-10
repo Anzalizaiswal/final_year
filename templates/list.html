@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block starts %}
+
+ <div class="secondpage container" >
+      <div class="top-places my-3">
+          <div class=" mb-2 " style="font-weight:700; font-size:1.8rem">Top Places Of Nepal</div>
+      </div>
+    <div class="sec-page">
+      <div class="row ">
+        {% for destination in destinations %}
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2  " >
+            <div class="shadow" style="border-radius:1.2rem;">
+            <img src="{{ destination.image }}" alt="Card image cap" style="height:12rem; width:100%; border-radius: 1.2rem 1.2rem 0px 0px;">
+            <div class=" px-2 py-3 " style="background-color:#D9D9D9;border-radius: 0rem 0rem 1.2rem 1.2rem; " >
+    <div class="des-name">
+        <a href="{% url 'get_details' destination.id %}" style="color:black;" >
+            {{destination.name}}</a>
+    </div>
+<div class="d-flex justify-content-end py-1" >
+    <div class="rating-stars " >
+    {% for i in "12345" %}
+        {% with i_int=i|add:0 %}
+            {% with half_star_limit=i_int|add:-0.5 %}
+                {% if i_int <= destination.average_rating %}
+                    <i class="bi bi-star-fill"></i>
+
+                {% elif half_star_limit <= destination.average_rating %}
+                    <i class="bi bi-star-half"></i>
+                {% else %}
+                    <i class="bi bi-star"></i>
+                {% endif %}
+            {% endwith %}
+        {% endwith %}
+    {% endfor %}
+    </div>({{ destination.count_ratings }})
+</div>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+ </div>
+{% endblock %}

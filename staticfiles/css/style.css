@@ -1,0 +1,124 @@
+
+.home{
+    background-image: url('Homepagepictures/Bgimgg.png');
+    background-size: cover;
+    background-position: center; 
+    height: 150vh; 
+    margin: 0;
+
+}
+.whereto{
+    
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 45vh;
+    margin: 0;
+    font-size: 56px; 
+    color: #A22025; 
+    font-weight: bold;
+}
+
+  .search {
+    display: flex;
+    border: 2px solid gray;
+    background-color: white;
+    border-radius: 1.4rem;
+    padding-left: 1.2rem;
+
+  }
+.search button{
+    background-color: #A22025;
+    opacity: 50%;
+    border-radius: 1.2rem;
+    color: black !important;
+  }
+  
+  .search input{
+   border: none;
+   border-radius: 1.4rem;
+
+   /* Adjust the margin as needed */
+  }
+  .top-places{
+    display: flex;
+    justify-content: left; 
+    align-items: center; 
+    height: 20vh;
+    font-size: 48px; 
+    color: #302842; 
+    font-weight: bold;
+    padding: 10px 20px 10px 0px;
+    
+
+  }
+  .more-places{
+    display: flex;
+    justify-content: left; 
+    align-items: center; 
+    height: 20vh;
+    font-size: 48px; 
+    color: #302842; 
+    font-weight: bold;
+    padding: 10px 20px 10px 0px;
+    
+
+  }
+  .sec-page img{
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+  }
+  .secondpage{
+    padding: 0rem 4rem;
+  }
+  .sec-page .row{
+    --bs-gutter-x: 0rem;
+  }
+  .sec-page .row .col{
+    margin: 0 0.5rem;
+  }
+  .thi-page img{
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+  }
+  .thirdpage{
+    padding: 0rem 4rem;
+    
+  }
+  .thi-page{
+    padding: 40px 40px 0 0;
+  }
+  .thi-page .row{
+    --bs-gutter-x: 0rem;
+   
+  }
+  .thi-page .row .col{
+    margin: 0 0.5rem;
+  }
+  .footer1{
+    background-image: url(Homepagepictures/image\ 16.png);
+    background-repeat: cover;
+    width: 100%;
+    margin-top: 4rem;
+    padding: 20px 0px 0px 0px;
+    height: 100%;
+  }
+  .discover{
+    padding: 200px 0 0 150px;
+    font-size: 56px;
+    font-weight: bold;
+    color: #0c0c0c;
+    margin-bottom: 5rem;
+  }
+  .discoverbutton{
+    margin-top: 12rem;
+    border-radius: 1.2rem;
+    background-color: white;
+    opacity: 50%;
+    margin-left: 12%;
+    margin-bottom: 12rem;
+  }
+  .footer2{
+    background-color: #D2E2EB;
+
+  }
